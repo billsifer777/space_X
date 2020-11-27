@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class force : MonoBehaviour
 {   
+    public int acceleration;
     public Vector3 force1;
     // Start is called before the first frame update
     void Start()
     {
-       GetComponent<Rigidbody>().AddForce(force1*100);
+       GetComponent<Rigidbody>().AddForce(force1*acceleration, ForceMode.Impulse);
     }
 
     // Update is called once per frame
@@ -18,6 +19,6 @@ public class force : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.Rotate(1,0,0);
+       // transform.Rotate(1,0,0);
     }
 }

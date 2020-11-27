@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+
 public class NewBehaviourScript : MonoBehaviour
 {
     private HashSet<Rigidbody> affectedBodies = new HashSet<Rigidbody>();
@@ -34,7 +35,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             Vector3 forceDirection = (transform.position - body.position).normalized;
             float distanceSqr = (transform.position - body.position).sqrMagnitude;
-            float strength = 10 * componentRigidbody.mass * body.mass / distanceSqr;
+            float strength = 10000000000* componentRigidbody.mass * body.mass / distanceSqr;
             body.AddForce(forceDirection * strength);
         }
     }
